@@ -28,7 +28,7 @@
 
             /* First image (Logo. Full height) */
             .bgimg-1 {
-                background-image: url("/images/shitass-speedrun.gif");
+                background-image: url("/images/wallpaper2.png");
                 min-height: 100%;
             }
 
@@ -80,7 +80,7 @@
                 <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
                 </a>
-                <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-info-circle"></i> About</a>
+                <a href="./index.html#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-info-circle"></i> About</a>
                 <a href="./rankedstats.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-bar-chart"></i> MCSR Ranked Stats</a>
                 <a href="./playerstats.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> Player Stats</a>
                 <a href="./seedstats.html" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-qrcode"></i> Seed Stats</a>
@@ -89,7 +89,7 @@
 
             <!-- Navbar on small screens -->
             <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-                <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">About</a>
+                <a href="./index.html#about" class="w3-bar-item w3-button" onclick="toggleFunction()">About</a>
                 <a href="./rankedstats.html" class="w3-bar-item w3-button" onclick="toggleFunction()">MCSR Ranked Stats</a>
                 <a href="./playerstats.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Player Stats</a>
                 <a href="./seedstats.html" class="w3-bar-item w3-button" onclick="toggleFunction()">Seed Stats</a>
@@ -100,16 +100,16 @@
         <!-- First Parallax Image with Logo Text -->
         <div class="bgimg-1 w3-display-container w3-opacity-min" id="main">
             <div class="w3-display-middle">
-                <div class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
+                <a href="./rankedstats.html" class="w3-center w3-button w3-hover-grey w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
                     MCSR Ranked Stats
                     <br>
                     <span class="w3-large">By Nadoms</span>
-                </div>
+                </a>
             </div>
         </div>
 
         <!-- Container (About Section) -->
-        <div class="w3-content w3-container w3-padding-64" id="about">
+        <div class="w3-content w3-container w3-padding-32" id="about">
             <h3 class="w3-center">ABOUT</h3>
             <p class="w3-center"><em>❝To me, error analysis is the sweet spot for improvement.❞ - 
                 <a href="https://en.wikipedia.org/wiki/Don_Norman" target="_blank">Don Norman</a></em></p>
@@ -126,15 +126,12 @@
                 </div>
                 <!-- Hide this text on small devices -->
                 <div class="w3-col m4 w3-hide-small w3-padding-large">
-                    <img src="./images/shitass-speedrun.gif" class="w3-image w3-opacity w3-hover-opacity-off" alt="my skin" width="200" height="333">
+                    <a href="https://namemc.com/profile/Nadoms.1" target="_blank">
+                        <img src="./images/nadoms2.png" class="w3-image w3-opacity w3-hover-opacity-off" alt="my skin" width="200" height="333">
+                    </a>
                 </div>
             </div>
         </div>
-
-        <!-- Footer -->
-        <footer class="w3-center w3-black w3-padding-16 w3-opacity w3-hover-opacity-off">
-        <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-        </footer>
         
         <script>
             // Modal Image Gallery
@@ -178,11 +175,13 @@
                 record_secs = Math.floor(data.data.best_record_time%60000/1000)
                 naddy.innerHTML = `
                     <b><i class="fa fa-user w3-margin-right"></i>IGN:</b> ${data.data.nickname}<br>
-                    <b><i class="fa fa-area-chart w3-margin-right"></i>ELO:</b> ${data.data.elo_rate} (${data.data.elo_rank})<br>
+                    <b><i class="fa fa-area-chart w3-margin-right"></i>ELO:</b> ${data.data.elo_rate} (#${data.data.elo_rank})<br>
                     <b><i class="fa fa-star w3-margin-right"></i>Best ELO:</b> ${data.data.best_elo_rate}<br>
                     <b><i class="fa fa-flash w3-margin-right"></i>Fastest Completion:</b> ${record_mins}m ${record_secs}s<br>
-                    <b><i class="fa fa-tv w3-margin-right"></i>Twitch:</b> <a href="twitch.tv/nqdoms">nqdoms</a><br>
+                    <b><i class="fa fa-refresh w3-margin-right"></i>Total Plays:</b> ${data.data.total_played}<br>
+                    <b><i class="fa fa-tv w3-margin-right"></i>Twitch:</b> <a href="https://twitch.tv/nqdoms" target="_blank">nqdoms</a><br>
                     <b><i class="fa fa-comment w3-margin-right"></i>Discord:</b> @nadoms<br>
+                    <b><i class="fa fa-code w3-margin-right"></i>GitHub:</b> <a href="https://github.com/nadoms" target="_blank">Nadoms</a><br>
                 `;
             }
         </script>
